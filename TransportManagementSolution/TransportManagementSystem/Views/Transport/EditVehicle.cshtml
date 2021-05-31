@@ -1,0 +1,76 @@
+﻿@model TransportManagementSystem.Models.Vehicle
+
+
+<link rel="stylesheet" href="~/css/" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Vehicles">Vehicles</a>
+            </li>
+            
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link" asp-action="Index">Log Out</a>
+        </form>
+    </div>
+</nav>
+<h1>Edit Vehicle</h1>
+
+
+<hr />
+<p>
+    <a asp-action="Home">Home</a>
+    <a asp-action="Index">Log Out</a>
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditVehicle"method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VehicleNumber" class="control-label"></label>
+                @Html.EditorFor(m => m.VehicleNumber, new { @class = "form-control" })
+                <span asp-validation-for="VehicleNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                @Html.EditorFor(m => m.Capacity, new { @class = "form-control" })
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsAC" /> @Html.DisplayNameFor(model => model.IsAC)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsOperational" /> @Html.DisplayNameFor(model => model.IsOperational)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvailableSeats" class="control-label"></label>
+                @Html.EditorFor(m => m.AvailableSeats, new { @class = "form-control" })
+                <span asp-validation-for="AvailableSeats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Vehicles">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

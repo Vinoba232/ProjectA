@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Vehicles">Vehicles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Employees">Employees</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Routes">Routes</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" asp-action="AddVehicle">Add Vehicle</a>
+                    <a class="dropdown-item" asp-action="AddEmployee">Add Employee</a>
+                    <a class="dropdown-item" asp-action="AddRoute">Add Route</a>
+
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Allocate">Allocate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="AllocationList">Allocation List</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link" asp-action="Index">Log Out</a>
+        </form>
+    </div>
+</nav>
+<h1>Seats are Full. Please select Another Vehicle</h1>
+@Html.ActionLink("Select another Vehicle", "GetRoutes", new { Location = TempData["Location"] })
