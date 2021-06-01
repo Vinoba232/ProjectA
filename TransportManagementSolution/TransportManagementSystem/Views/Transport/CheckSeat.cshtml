@@ -69,10 +69,10 @@
                 <span asp-validation-for="RouteNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VehicalNumber" class="control-label"></label>
+                <label asp-for="VehicleNumber" class="control-label"></label>
                 @Html.TextBox("VehicleNumber", TempData["VehicleNumber"])
-                @*@Html.EditorFor(m => m.VehicalNumber, new { @class = "form-control" })*@
-                <span asp-validation-for="VehicalNumber" class="text-danger"></span>
+                @*@Html.EditorFor(m => m.VehicleNumber, new { @class = "form-control" })*@
+                <span asp-validation-for="VehicleNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
