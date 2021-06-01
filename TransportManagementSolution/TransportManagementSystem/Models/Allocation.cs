@@ -11,6 +11,6 @@ namespace TransportManagementSystem.Models
         public int EmployeeId { get; set; }        
         public string Location { get; set; }        
         public int RouteNumber { get; set; }        
-        public string VehicalNumber { get; set; }       
+        public string VehicleNumber { get; set; }       
     }
 }
