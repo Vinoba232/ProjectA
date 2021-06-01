@@ -94,7 +94,7 @@ namespace TransportManagementSystemAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetAllocation", new { id = allocation.EmployeeId }, allocation);
+            return NoContent();
         }
         [HttpGet("{location}")]
         public async Task<ActionResult<List<Route>>> FindRoutes(string location)
